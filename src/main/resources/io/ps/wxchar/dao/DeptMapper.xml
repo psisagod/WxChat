@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="io.ps.blockexplorer0614.dao.DeptMapper">
-  <resultMap id="BaseResultMap" type="io.ps.blockexplorer0614.po.Dept">
+<mapper namespace="io.ps.wxchar.dao.DeptMapper">
+  <resultMap id="BaseResultMap" type="io.ps.wxchar.po.Dept">
     <id column="dept_id" jdbcType="INTEGER" property="deptId" />
     <result column="dept_name" jdbcType="VARCHAR" property="deptName" />
     <result column="pid" jdbcType="INTEGER" property="pid" />
@@ -19,13 +19,13 @@
     delete from dept
     where dept_id = #{deptId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="io.ps.blockexplorer0614.po.Dept">
+  <insert id="insert" parameterType="io.ps.wxchar.po.Dept">
     insert into dept (dept_id, dept_name, pid
       )
     values (#{deptId,jdbcType=INTEGER}, #{deptName,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="io.ps.blockexplorer0614.po.Dept">
+  <insert id="insertSelective" parameterType="io.ps.wxchar.po.Dept">
     insert into dept
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="deptId != null">
@@ -50,7 +50,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="io.ps.blockexplorer0614.po.Dept">
+  <update id="updateByPrimaryKeySelective" parameterType="io.ps.wxchar.po.Dept">
     update dept
     <set>
       <if test="deptName != null">
@@ -62,7 +62,7 @@
     </set>
     where dept_id = #{deptId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="io.ps.blockexplorer0614.po.Dept">
+  <update id="updateByPrimaryKey" parameterType="io.ps.wxchar.po.Dept">
     update dept
     set dept_name = #{deptName,jdbcType=VARCHAR},
       pid = #{pid,jdbcType=INTEGER}

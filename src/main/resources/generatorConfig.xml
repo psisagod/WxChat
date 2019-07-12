@@ -28,7 +28,7 @@
         </javaTypeResolver>
 
         <!--生成Model类存放位置-->
-        <javaModelGenerator targetPackage="io.ps.blockexplorer0614.po" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="io.ps.wxchar.po" targetProject="src/main/java">
             <!-- 是否对model添加 构造函数 -->
             <property name="constructorBased" value="false"/>
             <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
@@ -40,7 +40,7 @@
         </javaModelGenerator>
 
         <!--生成映射文件存放位置-->
-        <sqlMapGenerator targetPackage="io.ps.blockexplorer0614.dao" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="io.ps.wxchar.dao" targetProject="src/main/resources">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
@@ -50,7 +50,7 @@
                 type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象
                 type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
         -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="io.ps.blockexplorer0614.dao" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="io.ps.wxchar.dao" targetProject="src/main/java">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 

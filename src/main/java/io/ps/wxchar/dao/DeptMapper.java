@@ -1,6 +1,6 @@
-package io.ps.blockexplorer0614.dao;
+package io.ps.wxchar.dao;
 
-import io.ps.blockexplorer0614.po.Dept;
+import io.ps.wxchar.po.Dept;
 
 public interface DeptMapper {
     int deleteByPrimaryKey(Integer deptId);

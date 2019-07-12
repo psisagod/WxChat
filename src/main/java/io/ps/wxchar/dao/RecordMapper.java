@@ -1,6 +1,6 @@
-package io.ps.blockexplorer0614.dao;
+package io.ps.wxchar.dao;
 
-import io.ps.blockexplorer0614.po.Record;
+import io.ps.wxchar.po.Record;
 
 public interface RecordMapper {
     int deleteByPrimaryKey(Integer recordId);

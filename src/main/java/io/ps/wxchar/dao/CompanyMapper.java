@@ -1,6 +1,6 @@
-package io.ps.blockexplorer0614.dao;
+package io.ps.wxchar.dao;
 
-import io.ps.blockexplorer0614.po.Company;
+import io.ps.wxchar.po.Company;
 
 public interface CompanyMapper {
     int deleteByPrimaryKey(Integer companyId);

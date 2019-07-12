@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="io.ps.blockexplorer0614.dao.StudentMapper">
-  <resultMap id="BaseResultMap" type="io.ps.blockexplorer0614.po.Student">
+<mapper namespace="io.ps.wxchar.dao.StudentMapper">
+  <resultMap id="BaseResultMap" type="io.ps.wxchar.po.Student">
     <id column="student_id" jdbcType="INTEGER" property="studentId" />
     <result column="student_name" jdbcType="VARCHAR" property="studentName" />
     <result column="deptid" jdbcType="VARCHAR" property="deptid" />
@@ -22,13 +22,13 @@
     delete from student
     where student_id = #{studentId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="io.ps.blockexplorer0614.po.Student">
+  <insert id="insert" parameterType="io.ps.wxchar.po.Student">
     insert into student (student_id, student_name, deptid, 
       phone, gender, openid)
     values (#{studentId,jdbcType=INTEGER}, #{studentName,jdbcType=VARCHAR}, #{deptid,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR}, #{gender,jdbcType=BIT}, #{openid,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="io.ps.blockexplorer0614.po.Student">
+  <insert id="insertSelective" parameterType="io.ps.wxchar.po.Student">
     insert into student
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="studentId != null">
@@ -71,7 +71,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="io.ps.blockexplorer0614.po.Student">
+  <update id="updateByPrimaryKeySelective" parameterType="io.ps.wxchar.po.Student">
     update student
     <set>
       <if test="studentName != null">
@@ -92,7 +92,7 @@
     </set>
     where student_id = #{studentId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="io.ps.blockexplorer0614.po.Student">
+  <update id="updateByPrimaryKey" parameterType="io.ps.wxchar.po.Student">
     update student
     set student_name = #{studentName,jdbcType=VARCHAR},
       deptid = #{deptid,jdbcType=VARCHAR},

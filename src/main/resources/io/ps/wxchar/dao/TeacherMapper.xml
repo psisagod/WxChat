@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="io.ps.blockexplorer0614.dao.TeacherMapper">
-  <resultMap id="BaseResultMap" type="io.ps.blockexplorer0614.po.Teacher">
+<mapper namespace="io.ps.wxchar.dao.TeacherMapper">
+  <resultMap id="BaseResultMap" type="io.ps.wxchar.po.Teacher">
     <id column="teacher_id" jdbcType="INTEGER" property="teacherId" />
     <result column="teacher_name" jdbcType="VARCHAR" property="teacherName" />
     <result column="deptid" jdbcType="VARCHAR" property="deptid" />
@@ -22,13 +22,13 @@
     delete from teacher
     where teacher_id = #{teacherId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="io.ps.blockexplorer0614.po.Teacher">
+  <insert id="insert" parameterType="io.ps.wxchar.po.Teacher">
     insert into teacher (teacher_id, teacher_name, deptid, 
       phone, gender, openid)
     values (#{teacherId,jdbcType=INTEGER}, #{teacherName,jdbcType=VARCHAR}, #{deptid,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR}, #{gender,jdbcType=BIT}, #{openid,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="io.ps.blockexplorer0614.po.Teacher">
+  <insert id="insertSelective" parameterType="io.ps.wxchar.po.Teacher">
     insert into teacher
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="teacherId != null">
@@ -71,7 +71,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="io.ps.blockexplorer0614.po.Teacher">
+  <update id="updateByPrimaryKeySelective" parameterType="io.ps.wxchar.po.Teacher">
     update teacher
     <set>
       <if test="teacherName != null">
@@ -92,7 +92,7 @@
     </set>
     where teacher_id = #{teacherId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="io.ps.blockexplorer0614.po.Teacher">
+  <update id="updateByPrimaryKey" parameterType="io.ps.wxchar.po.Teacher">
     update teacher
     set teacher_name = #{teacherName,jdbcType=VARCHAR},
       deptid = #{deptid,jdbcType=VARCHAR},

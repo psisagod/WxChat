@@ -1,6 +1,6 @@
-package io.ps.blockexplorer0614.dao;
+package io.ps.wxchar.dao;
 
-import io.ps.blockexplorer0614.po.Teacher;
+import io.ps.wxchar.po.Teacher;
 
 public interface TeacherMapper {
     int deleteByPrimaryKey(Integer teacherId);

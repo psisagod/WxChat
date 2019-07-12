@@ -1,6 +1,7 @@
-package io.ps.blockexplorer0614.dao;
+package io.ps.wxchar.dao;
 
-import io.ps.blockexplorer0614.po.Student;
+import com.github.pagehelper.Page;
+import io.ps.wxchar.po.Student;
 
 public interface StudentMapper {
     int deleteByPrimaryKey(Integer studentId);
@@ -14,4 +15,6 @@ public interface StudentMapper {
     int updateByPrimaryKeySelective(Student record);
 
     int updateByPrimaryKey(Student record);
+
+    Page<Student> selectAllUser(String name, Integer deptid);
 }

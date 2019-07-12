@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="io.ps.blockexplorer0614.dao.RecordMapper">
-  <resultMap id="BaseResultMap" type="io.ps.blockexplorer0614.po.Record">
+<mapper namespace="io.ps.wxchar.dao.RecordMapper">
+  <resultMap id="BaseResultMap" type="io.ps.wxchar.po.Record">
     <id column="record_id" jdbcType="INTEGER" property="recordId" />
     <result column="companyid" jdbcType="INTEGER" property="companyid" />
     <result column="time" jdbcType="TIMESTAMP" property="time" />
@@ -25,7 +25,7 @@
     delete from record
     where record_id = #{recordId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="io.ps.blockexplorer0614.po.Record">
+  <insert id="insert" parameterType="io.ps.wxchar.po.Record">
     insert into record (record_id, companyid, time, 
       state, record_url, studentid, 
       count, pcount, dcount
@@ -35,7 +35,7 @@
       #{count,jdbcType=INTEGER}, #{pcount,jdbcType=INTEGER}, #{dcount,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="io.ps.blockexplorer0614.po.Record">
+  <insert id="insertSelective" parameterType="io.ps.wxchar.po.Record">
     insert into record
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="recordId != null">
@@ -96,7 +96,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="io.ps.blockexplorer0614.po.Record">
+  <update id="updateByPrimaryKeySelective" parameterType="io.ps.wxchar.po.Record">
     update record
     <set>
       <if test="companyid != null">
@@ -126,7 +126,7 @@
     </set>
     where record_id = #{recordId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="io.ps.blockexplorer0614.po.Record">
+  <update id="updateByPrimaryKey" parameterType="io.ps.wxchar.po.Record">
     update record
     set companyid = #{companyid,jdbcType=INTEGER},
       time = #{time,jdbcType=TIMESTAMP},

@@ -1,4 +1,4 @@
-package io.ps.blockexplorer0614.po;
+package io.ps.wxchar.po;
 
 import java.util.Date;
 

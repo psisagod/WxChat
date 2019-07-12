@@ -1,9 +1,9 @@
-package io.ps.blockexplorer0614.po;
+package io.ps.wxchar.po;
 
-public class Teacher {
-    private Integer teacherId;
+public class Student {
+    private Integer studentId;
 
-    private String teacherName;
+    private String studentName;
 
     private String deptid;
 
@@ -13,20 +13,20 @@ public class Teacher {
 
     private String openid;
 
-    public Integer getTeacherId() {
-        return teacherId;
+    public Integer getStudentId() {
+        return studentId;
     }
 
-    public void setTeacherId(Integer teacherId) {
-        this.teacherId = teacherId;
+    public void setStudentId(Integer studentId) {
+        this.studentId = studentId;
     }
 
-    public String getTeacherName() {
-        return teacherName;
+    public String getStudentName() {
+        return studentName;
     }
 
-    public void setTeacherName(String teacherName) {
-        this.teacherName = teacherName == null ? null : teacherName.trim();
+    public void setStudentName(String studentName) {
+        this.studentName = studentName == null ? null : studentName.trim();
     }
 
     public String getDeptid() {
