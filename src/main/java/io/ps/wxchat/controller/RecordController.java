@@ -31,11 +31,13 @@ public class RecordController {
     }
 
     @GetMapping("/recordList")
-    public List<RecordListDto> recordList(@RequestParam(required = false) String oppenid){
+    public PageInfo<RecordListDto> recordList(@RequestParam(required = false,defaultValue = "1") Integer pageNum
+                                            ,@RequestParam(required = false) String oppenid){
+        PageHelper.startPage(pageNum,5);
+        Page<RecordListDto> recordListDtos =recordService.selectRecordList(oppenid);
+        PageInfo<RecordListDto> userPageInfo = recordListDtos.toPageInfo();
 
-        List<RecordListDto> recordListDtos =recordService.selectRecordList(oppenid);
-
-        return recordListDtos;
+        return userPageInfo;
     }
 
 }

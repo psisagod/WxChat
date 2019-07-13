@@ -1,5 +1,6 @@
 package io.ps.wxchat.dao;
 
+import com.github.pagehelper.Page;
 import io.ps.wxchat.po.Record;
 import org.apache.ibatis.annotations.Param;
 
@@ -19,4 +20,6 @@ public interface RecordMapper {
     int updateByPrimaryKey(Record record);
 
     List<Record> selectByStudents(@Param("studentids") String studentids);
+
+    List<Record> selectByCompanyandClass(@Param("studentids") String studentids,@Param("companyID") Integer companyID);
 }

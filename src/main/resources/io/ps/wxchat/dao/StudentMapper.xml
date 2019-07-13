@@ -33,6 +33,13 @@
         where deptid = ${deptid}
     </select>
 
+  <select id="selectByStudentName" parameterType="java.lang.String" resultType="java.lang.String">
+        select
+        student_id
+        from student
+        where deptid = ${deptid} and student_name = #{sreach}
+    </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from student
     where student_id = #{studentId,jdbcType=INTEGER}

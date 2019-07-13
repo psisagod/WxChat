@@ -1,6 +1,7 @@
 package io.ps.wxchat.dao;
 
 import io.ps.wxchat.po.Company;
+import org.apache.ibatis.annotations.Param;
 
 public interface CompanyMapper {
     int deleteByPrimaryKey(Integer companyId);
@@ -16,4 +17,6 @@ public interface CompanyMapper {
     int updateByPrimaryKey(Company record);
 
     String selectByCompanyName(Integer companyid);
+
+    Integer selectByCompanyID(@Param("sreach") String sreach);
 }

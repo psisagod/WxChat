@@ -22,6 +22,13 @@
     where company_id = #{companyid,jdbcType=INTEGER}
   </select>
 
+  <select id="selectByCompanyID" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select
+    company_id
+    from company
+    where company_name = #{sreach}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from company
     where company_id = #{companyId,jdbcType=INTEGER}

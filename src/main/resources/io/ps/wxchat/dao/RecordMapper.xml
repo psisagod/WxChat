@@ -26,7 +26,14 @@
     select
     <include refid="Base_Column_List" />
     from record
-    where studentid in (${studentids})
+    where studentid in (${studentids}) order by time desc pcount desc
+  </select>
+
+  <select id="selectByStudents" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from record
+    where studentid in (${studentids}) and companyid = ${companyID} order by time desc pcount desc
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
