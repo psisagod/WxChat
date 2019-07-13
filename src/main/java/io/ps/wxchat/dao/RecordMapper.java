@@ -1,6 +1,9 @@
-package io.ps.wxchat.dao;
+package io.ps.wxchar.dao;
 
-import io.ps.wxchat.po.Record;
+import io.ps.wxchar.po.Record;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface RecordMapper {
     int deleteByPrimaryKey(Integer recordId);
@@ -14,4 +17,6 @@ public interface RecordMapper {
     int updateByPrimaryKeySelective(Record record);
 
     int updateByPrimaryKey(Record record);
+
+    List<Record> selectByStudents(@Param("studentids") String studentids);
 }

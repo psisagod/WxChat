@@ -1,6 +1,6 @@
-package io.ps.wxchat.dao;
+package io.ps.wxchar.dao;
 
-import io.ps.wxchat.po.Company;
+import io.ps.wxchar.po.Company;
 
 public interface CompanyMapper {
     int deleteByPrimaryKey(Integer companyId);
@@ -14,4 +14,6 @@ public interface CompanyMapper {
     int updateByPrimaryKeySelective(Company record);
 
     int updateByPrimaryKey(Company record);
+
+    String selectByCompanyName(Integer companyid);
 }

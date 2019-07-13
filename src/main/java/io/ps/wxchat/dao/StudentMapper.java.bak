@@ -24,8 +24,4 @@ public interface StudentMapper {
     Page<Student> search(@Param("name") String name,@Param("deptid") Integer deptid);
 
     void ps(@Param("studentIds")List<Integer> studentIds);
-
-	Student selectByoppenid(@Param("oppenid") String oppenid);
-
-    List<Integer> selectByDeptIdList(@Param("deptid") String deptid);
 }

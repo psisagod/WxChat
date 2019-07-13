@@ -1,6 +1,7 @@
-package io.ps.wxchat.dao;
+package io.ps.wxchar.dao;
 
-import io.ps.wxchat.po.Dept;
+import io.ps.wxchar.po.Dept;
+import org.apache.ibatis.annotations.Param;
 
 public interface DeptMapper {
     int deleteByPrimaryKey(Integer deptId);
@@ -14,4 +15,6 @@ public interface DeptMapper {
     int updateByPrimaryKeySelective(Dept record);
 
     int updateByPrimaryKey(Dept record);
+
+    String selectByDeptId(@Param("deptid") String deptid);
 }
