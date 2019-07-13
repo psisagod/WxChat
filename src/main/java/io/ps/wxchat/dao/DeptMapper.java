@@ -1,6 +1,6 @@
-package io.ps.wxchar.dao;
+package io.ps.wxchat.dao;
 
-import io.ps.wxchar.po.Dept;
+import io.ps.wxchat.po.Dept;
 import org.apache.ibatis.annotations.Param;
 
 public interface DeptMapper {

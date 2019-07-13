@@ -1,6 +1,6 @@
-package io.ps.wxchar.dao;
+package io.ps.wxchat.dao;
 
-import io.ps.wxchar.po.Record;
+import io.ps.wxchat.po.Record;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

@@ -21,6 +21,14 @@
     from record
     where record_id = #{recordId,jdbcType=INTEGER}
   </select>
+
+  <select id="selectByStudents" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from record
+    where studentid in (${studentids})
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from record
     where record_id = #{recordId,jdbcType=INTEGER}

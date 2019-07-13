@@ -14,6 +14,14 @@
     from company
     where company_id = #{companyId,jdbcType=INTEGER}
   </select>
+
+  <select id="selectByCompanyName" parameterType="java.lang.Integer" resultType="java.lang.String">
+    select
+    company_name
+    from company
+    where company_id = #{companyid,jdbcType=INTEGER}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from company
     where company_id = #{companyId,jdbcType=INTEGER}

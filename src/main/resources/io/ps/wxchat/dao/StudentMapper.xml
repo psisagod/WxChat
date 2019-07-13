@@ -18,6 +18,21 @@
     from student
     where student_id = #{studentId,jdbcType=INTEGER}
   </select>
+
+<select id="selectByoppenid" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from student
+    where openid = #{oppenid,jdbcType=INTEGER}
+  </select>
+
+    <select id="selectByDeptIdList" parameterType="java.lang.String" resultType="java.lang.String">
+        select
+        student_id
+        from student
+        where deptid = ${deptid}
+    </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from student
     where student_id = #{studentId,jdbcType=INTEGER}

@@ -1,14 +1,14 @@
-package io.ps.wxchar.service.impl;
+package io.ps.wxchat.service.impl;
 
 import com.github.pagehelper.Page;
-import io.ps.wxchar.dao.CompanyMapper;
-import io.ps.wxchar.dao.DeptMapper;
-import io.ps.wxchar.dao.RecordMapper;
-import io.ps.wxchar.dao.StudentMapper;
-import io.ps.wxchar.dto.RecordListDto;
-import io.ps.wxchar.po.Record;
-import io.ps.wxchar.po.Student;
-import io.ps.wxchar.service.RecordService;
+import io.ps.wxchat.dao.CompanyMapper;
+import io.ps.wxchat.dao.DeptMapper;
+import io.ps.wxchat.dao.RecordMapper;
+import io.ps.wxchat.dao.StudentMapper;
+import io.ps.wxchat.dto.RecordListDto;
+import io.ps.wxchat.po.Record;
+import io.ps.wxchat.po.Student;
+import io.ps.wxchat.service.RecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,10 +35,12 @@ public class RecordServiceImpl implements RecordService {
         List<RecordListDto> recordListDtoList = new ArrayList<RecordListDto>();
 
         Student student = studentMapper.selectByoppenid(oppenid);
+
         if(student!=null){
             String classname = deptMapper.selectByDeptId(student.getDeptid());
-            List<Integer> depts = studentMapper.selectByDeptIdList(student.getDeptid());
+            List<String> depts = studentMapper.selectByDeptIdList(student.getDeptid());
             String studentids = depts.toString();
+            studentids=studentids.substring(1,studentids.length()-1);
             List<Record> records = recordMapper.selectByStudents(studentids);
             for (Record r:records) {
                 String companyName = companyMapper.selectByCompanyName(r.getCompanyid());
@@ -59,6 +61,7 @@ public class RecordServiceImpl implements RecordService {
             }
             return recordListDtoList;
         }else{
+            //需要管理员认证
             return null;
         }
     }

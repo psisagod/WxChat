@@ -1,4 +1,4 @@
-package io.ps.wxchar.dto;
+package io.ps.wxchat.dto;
 
 import java.util.Date;
 

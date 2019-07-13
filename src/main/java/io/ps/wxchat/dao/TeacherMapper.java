@@ -1,6 +1,6 @@
-package io.ps.wxchar.dao;
+package io.ps.wxchat.dao;
 
-import io.ps.wxchar.po.Teacher;
+import io.ps.wxchat.po.Teacher;
 
 public interface TeacherMapper {
     int deleteByPrimaryKey(Integer teacherId);
