@@ -101,4 +101,12 @@
       openid = #{openid,jdbcType=VARCHAR}
     where teacher_id = #{teacherId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByOppenid" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from teacher
+    where openid = #{oppenid}
+  </select>
+
 </mapper>
