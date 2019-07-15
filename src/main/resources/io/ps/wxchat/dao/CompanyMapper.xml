@@ -26,7 +26,7 @@
     select
     company_id
     from company
-    where company_name = #{sreach}
+    where company_name like '%${sreach}%'
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">

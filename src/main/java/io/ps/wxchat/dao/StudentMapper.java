@@ -30,4 +30,6 @@ public interface StudentMapper {
     List<String> selectByDeptIdList(@Param("deptid") String deptid);
 
     String selectByStudentName(@Param("sreach")String sreach,@Param("deptid") String deptid);
+
+    String selectByStudentID(Integer studentid);
 }
