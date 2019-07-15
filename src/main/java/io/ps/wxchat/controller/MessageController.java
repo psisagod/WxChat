@@ -28,6 +28,11 @@ public class MessageController {
         String token = wxchatMPService.getTokenByCode(code);
         return token;
     }
+    @GetMapping("/getUserByToken")
+    public String getUserByToken(@RequestParam String token){
+        String openid = wxchatMPService.getUserByToken(token);
+        return openid;
+    }
 
     /**
      * 发送短信验证码

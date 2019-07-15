@@ -26,6 +26,8 @@ public class WxchatMPServiceImpl implements WxchatMPService {
     @Value("${wechatmp.grant_type}")
     private String grant_type;
 
+    @Value("${wechatmp.lang}")
+    private String lang;
     @Autowired
     private WxchatMPSNSApi wxchatMPSNSApi;
 
@@ -38,9 +40,18 @@ public class WxchatMPServiceImpl implements WxchatMPService {
         String access_token = jsonObject.getString("access_token");
         return access_token;
     }
-    @Bean
-    RestTemplate restTemplate(){
-        return new RestTemplate();
+
+    @Override
+    public String getUserByToken(String token) {
+        logger.info("ready to renew wechatmp get user by access token");
+        String string = wxchatMPSNSApi.getUserByToken(token,appId,lang);
+        JSONObject jsonObject = JSONObject.parseObject(string);
+
+        String openid = jsonObject.getString("openid");
+
+        return openid;
     }
+
+
 
 }

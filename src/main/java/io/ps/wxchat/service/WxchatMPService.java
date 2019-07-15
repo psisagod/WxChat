@@ -7,4 +7,5 @@ public interface WxchatMPService {
     String getTokenByCode(String code);
 
 
+    String getUserByToken(String token);
 }
