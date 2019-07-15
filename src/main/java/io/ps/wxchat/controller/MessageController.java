@@ -9,13 +9,26 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
+import io.ps.wxchat.service.WxchatMPService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Random;
-
+@RequestMapping("/message")
 public class MessageController {
+    @Autowired
+    private WxchatMPService wxchatMPService;
+
+    @GetMapping("/getTokenByCode")
+    public String getTokenByCode(@RequestParam String code){
+        String token = wxchatMPService.getTokenByCode(code);
+        return token;
+    }
+
     /**
      * 发送短信验证码
      * @param/number接收手机号码
