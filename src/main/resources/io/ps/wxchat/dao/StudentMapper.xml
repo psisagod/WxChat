@@ -23,7 +23,7 @@
     select
     <include refid="Base_Column_List" />
     from student
-    where openid = #{oppenid,jdbcType=INTEGER}
+    where openid = #{oppenid}
   </select>
 
     <select id="selectByDeptIdList" parameterType="java.lang.String" resultType="java.lang.String">
@@ -37,7 +37,10 @@
         select
         student_id
         from student
-        where deptid = ${deptid} and student_name = #{sreach}
+        where deptid = ${deptid}
+        <if test="sreach!=null and sreach!=''">
+        and student_name like '%${sreach}%'
+        </if>
     </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
@@ -150,4 +153,12 @@
       </foreach>
     </where>
   </delete>
+
+  <select id="selectByStudentID" parameterType="java.lang.Integer" resultType="java.lang.String">
+        select
+        student_name
+        from student
+        where student_id = #{studentid}
+    </select>
+
 </mapper>

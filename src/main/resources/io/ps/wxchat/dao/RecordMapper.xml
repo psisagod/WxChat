@@ -29,7 +29,7 @@
     where studentid in (${studentids}) order by time,pcount desc
   </select>
 
-  <select id="selectByCompanyandClass" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectByCompanyandClass" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from record

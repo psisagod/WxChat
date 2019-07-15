@@ -79,7 +79,8 @@ public class RecordServiceImpl implements RecordService {
                 for (Record r:records) {
                     String companyName = companyMapper.selectByCompanyName(r.getCompanyid());
                     RecordListDto recordListDto = new RecordListDto();
-                    recordListDto.setStudent(student.getStudentName());
+                    String studentName = studentMapper.selectByStudentID(r.getStudentid());
+                    recordListDto.setStudent(studentName);
                     recordListDto.setDept(classname);
                     recordListDto.setCompany(companyName);
                     recordListDto.setCount(r.getCount());
