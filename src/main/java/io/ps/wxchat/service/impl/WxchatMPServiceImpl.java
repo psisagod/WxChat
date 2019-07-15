@@ -20,13 +20,16 @@ public class WxchatMPServiceImpl implements WxchatMPService {
     @Value("${wechatmp.appSecret}")
     private String appSecret;
 
+    @Value("${wechatmp.grant_type}")
+    private String grant_type;
+
     @Autowired
     private WxchatMPApi wxchatMPApi;
 
     @Override
     public String getTokenByCode(String code) {
         logger.info("ready to renew wechatmp access token");
-        JSONObject jsonObject = wxchatMPApi.getTokenByCode(appId, appSecret,code,"authorization_code");
+        JSONObject jsonObject = wxchatMPApi.getTokenByCode(appId, appSecret,code,grant_type);
         String access_token = jsonObject.getString("access_token");
         return access_token;
     }
