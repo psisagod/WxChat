@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/elementui.css">
+    <title>首页</title>
+</head>
+<script>
+
+
+</script>
+
+
+<body>
+    <div id="app">
+
+        <div style="width: 100%; margin: 0 auto; ">
+            <el-container>
+                <el-header class="header"
+                    style=" text-align: center; line-height:700px; width: 100%; height: '500px';background: url('file:///D:/文件集/文件/weixinfront/assets/img/324771.jpg')">
+                    <img src="assets\img\3.png" class="logo" />
+                    <el-input style="width: 60%; size: 60px; vertical-align:240%" placeholder="请输入内容"
+                        class="input-with-select">
+                        <el-select v-model="select" slot="prepend" placeholder="请选择">
+                            <el-option label="xx班" value="1"></el-option>
+                            <el-option label="xx班" value="2"></el-option>
+                            <el-option label="xx班" value="3"></el-option>
+                        </el-select>
+                        <el-button slot="append" style="background-color: rgb(54, 21, 199)" icon="el-icon-search"
+                            @click=""></el-button>
+                    </el-input>
+
+
+                </el-header>
+
+                <el-main style="width: 100%; text-align: center;">
+
+                    <template>
+
+                        <hr />
+
+                        <div style="text-align: right;">
+                            <el-button type="primary" @click="adduser()">新增信息</el-button>
+                        </div>
+                        <el-table :data="tableData" v-loading="loading" border style="width: 100%; margin: 0 auto;">
+                            <el-table-column fixed prop="recordUrl" label="头像" width="150">
+                            </el-table-column>
+                            <el-table-column prop="time" label="日期" width="150">
+                            </el-table-column>
+                            <el-table-column prop="oppenid" label="`oppenid " width="150">
+                            </el-table-column>
+                            <el-table-column prop="name" label="姓名" width="120">
+                            </el-table-column>
+                            <el-table-column prop="snakename" label="昵称" width="120">
+                            </el-table-column>
+                            <el-table-column prop="company" label="公司" width="120">
+                            </el-table-column>
+                            <el-table-column prop="city" label="时间" width="120">
+                            </el-table-column>
+                            <el-table-column prop="dept" label="班级名称" width="120">
+                            </el-table-column>
+                            <el-table-column prop="count" label="好评数" width="120">
+                            </el-table-column>
+                            <el-table-column prop="pcount" label="下载数" width="120">
+                            </el-table-column>
+                            <el-table-column prop="dcount" label="好评数" width="120">
+                            </el-table-column>
+                            <el-table-column fixed="right" label="收藏数" width="150">
+                                <template slot-scope="scope">
+                                    <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
+                                </template>
+                            </el-table-column>
+                        </el-table>
+                        <div class="block">
+                            <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
+                                :current-page="PageDates.currentPage" :page-sizes="[10, 20, 30, 40]" :page-size="PageDates.pageSize"
+                                layout="total, sizes, prev, pager, next, jumper" :total="PageDates.total" >
+                            </el-pagination>
+                        </div>
+                    </template>
+                </el-main>
+            </el-container>
+        </div>
+
+
+    </div>
+
+    
+
+    <script src="assets/js/vue.js"></script>
+    <script src="assets/js/elementui.js"></script>
+    <script src="assets/js/axios.min.js"></script>
+    <script src="viewmodels/common.js"></script>
+    <script src="viewmodels/index.js"></script>
+</body>
+
+</html>

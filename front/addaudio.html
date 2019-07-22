@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/elementui.css">
+    <title>添加音频</title>
+</head>
+
+<body>
+    <div id="app">
+            <el-container>
+                <el-header style="width: 100%; height: 800px; ; text-align: center" >
+                        
+
+                        <el-form ref="form" :model="form" label-width="80px"
+                            style=" width: 500px; margin: 0 auto; margin-top: 100px;">
+                            <span style="font-size: 28px;  "> <strong>上传音频文件</strong></span><br><br>
+                            <el-form-item label="姓名">
+                                <el-input v-model="form.name" style="width: 200px"></el-input>
+                            </el-form-item>
+                            <el-form-item label="班级">
+                                <el-select v-model="form.region" placeholder="请选择班级" style="width: 200px">
+                                    <el-option label="xx班" value="xx班"></el-option>
+                                    <el-option label="xx班" value="xx班"></el-option>
+                                </el-select>
+                            </el-form-item>
+                            <el-form-item label="面试时间">
+                                <el-col :span="11">
+                                    <el-date-picker type="date" placeholder="选择日期" v-model="form.date1"
+                                    style="width: 200px; left: 110px;">
+                                    </el-date-picker>
+                                </el-col>
+                            </el-form-item>
+                            <el-form-item label="是否成功">
+                                <el-switch v-model="form.delivery" style="left:-83px; "></el-switch>
+                            </el-form-item>
+                            <el-form-item label="面试薪资">
+                                <el-input v-model="form.name" style="width: 200px"></el-input>
+                            </el-form-item>
+
+                            <el-upload class="upload-demo" drag action="https://jsonplaceholder.typicode.com/posts/"
+                                multiple>
+                                <i class="el-icon-upload"></i>
+                                <div class="el-upload__text" accept="">将文件拖到此处，或<em>点击上传</em></div>
+                                <div class="el-upload__tip" slot="tip">只能上传音频文件，且不超过500M</div>
+                            </el-upload><br><br>
+
+                            <el-form-item>
+                                <el-button type="primary" @click="onSubmit()">立即创建</el-button>
+                                <el-button @click="onCancel()">取消</el-button>
+                            </el-form-item>
+                        </el-form>
+
+                </el-header>
+
+
+
+                <el-main style="width: 100%;height: 500px;">
+
+
+                </el-main>
+            </el-container>
+
+
+    </div>
+
+    <script src="assets/js/vue.js"></script>
+    <script src="assets/js/elementui.js"></script>
+    <script src="assets/js/axios.min.js"></script>
+    <script src="viewmodels\addaudio.js"></script>
+</body>
+
+</html>
