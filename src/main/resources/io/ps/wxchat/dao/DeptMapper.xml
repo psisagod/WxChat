@@ -87,4 +87,11 @@
       pid = #{pid,jdbcType=INTEGER}
     where dept_id = #{deptId,jdbcType=INTEGER}
   </update>
+
+    <select id="selectByName" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select
+        dept_id
+        from dept
+        where dept_name = #{campus}
+    </select>
 </mapper>

@@ -22,4 +22,6 @@ public interface DeptMapper {
     String selectByDeptId(@Param("deptid") String deptid);
 
     List<DeptDto> selectChildren(@Param("pid") Integer pid);
+
+    Integer selectByName(@Param("campus") String campus);
 }
