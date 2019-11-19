@@ -16,6 +16,7 @@ public class DeptController {
     @GetMapping("/getChildren")
     public List<DeptDto> getChildren(@RequestParam(required = false,defaultValue = "0") Integer pid){
         List<DeptDto> deptDtos = deptService.selectChildren(pid);
+
         return deptDtos;
     }
 }
